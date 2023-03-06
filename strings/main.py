@@ -7,36 +7,34 @@ __human_name__ = 'strings'
 # EK final 1988
 
 # Part 1
-Scorer_name_0 = "Ruud Gullit"
-Scorer_name_1 = "Marco van Basten"
+scorer_name_0 = "Ruud Gullit"
+scorer_name_1 = "Marco van Basten"
 goal_0 = 32 # minutes
 goal_1 = 54 # minutes 8 minutes into the second half. (blijkbaar dus minuut 54 ipv 53 volgens check)
 
 # Who scored when?
-scorers = Scorer_name_0 + " " + str(goal_0)+ ", " + Scorer_name_1 + " " + str(goal_1)
+scorers = scorer_name_0 + " " + str(goal_0)+ ", " + scorer_name_1 + " " + str(goal_1)
 print (scorers)
 
 # Report in full sentences.
-report= Scorer_name_0 + " scored in the " + f'{goal_0}' + "nd minute" +"\n" + Scorer_name_1 + " scored in the " + f'{goal_1}' + "th minute"
-
+report = f"{scorer_name_0} scored in the {goal_0}nd minute\n{scorer_name_1} scored in the {goal_1}th minute"
 print (report)
+
 
 # Part 2
 player = "Ruud Gullit"
-first_name = player[player.find ("Ruud"):4] # Ruud
+index_space= player.find(" ")
+first_name = player[:index_space] # Ruud
 first_name_length = len (first_name) # 4
-last_name = player[player.find ("G"):] # Gullit
-last_name_len = len (player[player.find ("G"):]) # 6
-first_letter = player[player.find ("Ruud"):1] # R
+last_name = player[index_space+1:] # Gullit
+last_name_len = len (last_name) # 6
+first_letter = first_name[:1] # R
 name_short = first_letter + ". " + last_name # R. Gullit
 
 
 # Chant
-player = "Ruud Gullit"
-first_name = player [0:4]  # Ruud
-first_name_excl = player [0:4] + "! " # Ruud
-chant = (first_name_length - 1) * first_name_excl + first_name_excl[0:len (player [0:4]) + 1] #(4-1) * Ruud! + Ruud! = Ruud! Ruud! Ruud! Ruud!
-
+first_name_exclamation = first_name + "! " # Ruud
+chant = (first_name_length - 1) * (first_name + "! ") + first_name + "!"
 print (chant)
 
 chant_lengt = len (chant) # 23
